@@ -2980,6 +2980,120 @@
     "id": "IhteVO2n7"
   },
   {
+    "_id": "79veR7EAq",
+    "name": "GenerativeNoise",
+    "files": [
+      {
+        "name": "root",
+        "content": "",
+        "children": [
+          "67e30252e80cdc1affb4cdb2",
+          "67e30252e80cdc1affb4cdb1",
+          "67e30252e80cdc1affb4cdb3"
+        ],
+        "fileType": "folder",
+        "isSelectedFile": false,
+        "_id": "67e30252e80cdc1affb4cdb4",
+        "createdAt": "2025-03-26T01:57:10.344Z",
+        "updatedAt": "2025-03-26T01:57:10.344Z",
+        "id": "67e30252e80cdc1affb4cdb4"
+      },
+      {
+        "name": "sketch.js",
+        "content": "function setup() {\n  createCanvas(600,600,WEBGL);\n  angleMode(DEGREES)\n  noiseDetail(1);\n}\n\nfunction draw() {\n  background(0);\n  translate(0,-200,-200)\n  rotateX(60)\n  \n  var w = 30\n  var start = frameCount / 100\n  var xoff = 0\n  for(var x = -width/2; x <= width/2; x+=w){\n    yoff = 0\n    for(var y = -height/4; y <= height/4; y+=w){\n      var h = map(noise(xoff + start,yoff + start),0,-1,-100,100)\n      var r = map(x,-width/2,width/2,50,255)\n      var g = map(y, -height/2, height/2, 200, 100)\n      var b = map(h, -100,100,200,255)\n      push()\n      noStroke()\n      fill(r,g,b)\n      translate(x,y,h)\n      sphere(w/3.5)\n      \n      fill(r-25,g-25,b-25)\n      translate(0,0.1, h/2)\n      sphere(w/3.5)\n      \n      fill(r-50,g-50,b-50)\n      translate(0,0.1, h/2)\n      sphere(w/3.5)\n      \n      fill(r-75,g-75,b-75)\n      translate(0,0.1,h/2)\n      sphere(w/3.5)\n      \n      // translate(0,100)\n      // sphere(w/3.5)\n      \n      pop()\n      \n      yoff+=0.1\n    }\n    xoff += 0.1\n  }\n}",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": true,
+        "_id": "67e30252e80cdc1affb4cdb1",
+        "createdAt": "2025-03-26T01:57:10.344Z",
+        "updatedAt": "2025-03-26T01:57:10.344Z",
+        "id": "67e30252e80cdc1affb4cdb1"
+      },
+      {
+        "name": "index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js\"></script>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n    <meta charset=\"utf-8\" />\n\n  </head>\n  <body>\n    <main>\n    </main>\n    <script src=\"sketch.js\"></script>\n  </body>\n</html>\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67e30252e80cdc1affb4cdb2",
+        "createdAt": "2025-03-26T01:57:10.344Z",
+        "updatedAt": "2025-03-26T01:57:10.344Z",
+        "id": "67e30252e80cdc1affb4cdb2"
+      },
+      {
+        "name": "style.css",
+        "content": "html, body {\n  margin: 0;\n  padding: 0;\n}\ncanvas {\n  display: block;\n}\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67e30252e80cdc1affb4cdb3",
+        "createdAt": "2025-03-26T01:57:10.344Z",
+        "updatedAt": "2025-03-26T01:57:10.344Z",
+        "id": "67e30252e80cdc1affb4cdb3"
+      }
+    ],
+    "updatedAt": "2025-03-26T01:57:10.344Z",
+    "createdAt": "2025-03-25T19:24:38.813Z",
+    "id": "79veR7EAq"
+  },
+  {
+    "_id": "iB9-joFWU",
+    "name": "GenerativeNoise copy",
+    "files": [
+      {
+        "name": "root",
+        "content": "",
+        "children": [
+          "67e360aae80cdc1affb4cdb6",
+          "67e360aae80cdc1affb4cdb7",
+          "67e360aae80cdc1affb4cdb8"
+        ],
+        "fileType": "folder",
+        "isSelectedFile": false,
+        "_id": "67e360aae80cdc1affb4cdb5",
+        "createdAt": "2025-03-26T02:08:27.812Z",
+        "updatedAt": "2025-03-26T02:08:27.812Z",
+        "id": "67e360aae80cdc1affb4cdb5"
+      },
+      {
+        "name": "sketch.js",
+        "content": "function setup() {\n  createCanvas(600,600,WEBGL);\n  angleMode(DEGREES)\n  noiseDetail(1);\n}\n\nfunction draw() {\n  background(0);\n  //translate(0,-200,-200)\n  rotateX(90)\n  \n  var w = 30\n  var start = frameCount / 100\n  var xoff = 0\n  for(var x = -width; x <= width; x+=w){\n    yoff = 0\n    for(var y = -height/2; y <= height/2; y+=w){\n      var h = map(noise(xoff + start,yoff + start),0,-1,-100,100)\n      var r = map(x,-width/2,width/2,50,255)\n      var g = map(y, -height/2, height/2, 200, 100)\n      var b = map(h, -100,100,200,255)\n      push()\n      noStroke()\n      fill(r,g,b)\n      translate(x,y,h)\n      sphere(w/3.5)\n      \n      fill(r-25,g-25,b-25)\n      translate(0,0.1, h/2)\n      sphere(w/3.5)\n      \n      fill(r-50,g-50,b-50)\n      translate(0,0.1, h/2)\n      sphere(w/3.5)\n      \n      fill(r-75,g-75,b-75)\n      translate(0,0.1,h/2)\n      sphere(w/3.5)\n      \n      // translate(0,100)\n      // sphere(w/3.5)\n      \n      pop()\n      \n      yoff+=0.1\n    }\n    xoff += 0.1\n  }\n}",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": true,
+        "_id": "67e360aae80cdc1affb4cdb7",
+        "createdAt": "2025-03-26T02:08:27.812Z",
+        "updatedAt": "2025-03-26T02:08:27.812Z",
+        "id": "67e360aae80cdc1affb4cdb7"
+      },
+      {
+        "name": "index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js\"></script>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n    <meta charset=\"utf-8\" />\n\n  </head>\n  <body>\n    <main>\n    </main>\n    <script src=\"sketch.js\"></script>\n  </body>\n</html>\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67e360aae80cdc1affb4cdb6",
+        "createdAt": "2025-03-26T02:08:27.812Z",
+        "updatedAt": "2025-03-26T02:08:27.812Z",
+        "id": "67e360aae80cdc1affb4cdb6"
+      },
+      {
+        "name": "style.css",
+        "content": "html, body {\n  margin: 0;\n  padding: 0;\n}\ncanvas {\n  display: block;\n}\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67e360aae80cdc1affb4cdb8",
+        "createdAt": "2025-03-26T02:08:27.812Z",
+        "updatedAt": "2025-03-26T02:08:27.812Z",
+        "id": "67e360aae80cdc1affb4cdb8"
+      }
+    ],
+    "createdAt": "2025-03-26T02:04:26.327Z",
+    "updatedAt": "2025-03-26T02:08:27.812Z",
+    "id": "iB9-joFWU"
+  },
+  {
     "_id": "Jo7NnSJZG",
     "name": "Glow memory",
     "updatedAt": "2024-04-30T21:21:44.108Z",
@@ -3149,6 +3263,63 @@
     "updatedAt": "2025-03-13T15:46:08.990Z",
     "createdAt": "2025-03-13T15:10:46.644Z",
     "id": "kXK6vGmiTt"
+  },
+  {
+    "_id": "ugJpz97jW",
+    "name": "ims02-Vi",
+    "files": [
+      {
+        "name": "root",
+        "content": "",
+        "children": [
+          "67dc3471b153c659e7f26e83",
+          "67dc3471b153c659e7f26e82",
+          "67dc3471b153c659e7f26e84"
+        ],
+        "fileType": "folder",
+        "isSelectedFile": false,
+        "_id": "67dc3471b153c659e7f26e85",
+        "createdAt": "2025-04-03T14:50:21.784Z",
+        "updatedAt": "2025-04-03T14:50:21.784Z",
+        "id": "67dc3471b153c659e7f26e85"
+      },
+      {
+        "name": "sketch.js",
+        "content": "//https://openprocessing.org/sketch/2442794 \n\nlet radius = 250;\nlet my = {};\n\nfunction setup() {\n  // Set up the canvas with WEBGL mode\n  createCanvas(720, 720, WEBGL);\n  frameRate(25);\n  noFill(); // Disable fill for shapes\n  strokeWeight(3); // Set line thickness\n  \n  my.fullScreenBtn = createButton(\"Full Screen\");\n  my.fullScreenBtn.mousePressed(full_screen_action);\n  my.fullScreenBtn.style(\"font-size:42px\");\n}\n\nfunction draw() {\n  // Set the background color to black\n  background(0);\n\n  // Calculate rotation based on mouse movement\n  let rotationX = map(mouseY, 0, height, -PI, PI);\n  let rotationY = map(mouseX, 0, width, -PI, PI);\n  \n  // Apply rotations based on mouse position\n  rotateX(rotationX);\n  rotateY(rotationY);\n\n  // Draw animated shapes\n  for (let i = 0; i < 20; i++) {\n    // Rotate around the Z axis by 8 degrees for each shape\n    rotateZ(PI / 22.5);\n\n    // Animate the color of the lines\n    let r = map(sin(frameCount * 0.05 + i), -1, 1, 50, 255);\n    let g = map(sin(frameCount * 0.03 + i), -1, 1, 50, 255);\n    let b = map(cos(frameCount * 0.04 + i), -1, 1, 50, 255);\n    stroke(r, g, b); // Set stroke color\n\n    // Start drawing the shape\n    beginShape();\n    for (let theta_deg = 0.5; theta_deg < 180; theta_deg += 0.5) {\n      // Calculate phi angle based on Perlin noise\n      let phi_deg = map(noise(theta_deg * 0.008 + frameCount * 0.02), 0, 1, -1080, 1080);\n\n      // Calculate the 3D coordinates\n      let x = windowWidth/4 * sin(radians(theta_deg)) * cos(radians(phi_deg));\n      let y = windowWidth/4 * sin(radians(theta_deg)) * sin(radians(phi_deg));\n      let z = windowWidth/4 * cos(radians(theta_deg));\n\n      // Add the vertex to the shape\n      vertex(x, y, z);\n    }\n    endShape();\n  }\n}\n\nfunction full_screen_action() {\n  my.fullScreenBtn.remove();\n  fullscreen(1);\n  let delay = 3000;\n  setTimeout(ui_present_window, delay);\n}\n\nfunction ui_present_window() {\n  resizeCanvas(windowWidth, windowHeight);\n  // init_dim();\n}",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": true,
+        "_id": "67dc3471b153c659e7f26e82",
+        "createdAt": "2025-04-03T14:50:21.784Z",
+        "updatedAt": "2025-04-03T14:50:21.784Z",
+        "id": "67dc3471b153c659e7f26e82"
+      },
+      {
+        "name": "index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js\"></script>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n    <meta charset=\"utf-8\" />\n\n  </head>\n  <body>\n    <main>\n    </main>\n    <script src=\"sketch.js\"></script>\n  </body>\n</html>\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67dc3471b153c659e7f26e83",
+        "createdAt": "2025-04-03T14:50:21.784Z",
+        "updatedAt": "2025-04-03T14:50:21.784Z",
+        "id": "67dc3471b153c659e7f26e83"
+      },
+      {
+        "name": "style.css",
+        "content": "html, body {\n  margin: 0;\n  padding: 0;\n}\ncanvas {\n  display: block;\n}\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67dc3471b153c659e7f26e84",
+        "createdAt": "2025-04-03T14:50:21.784Z",
+        "updatedAt": "2025-04-03T14:50:21.784Z",
+        "id": "67dc3471b153c659e7f26e84"
+      }
+    ],
+    "updatedAt": "2025-04-03T14:50:21.784Z",
+    "createdAt": "2025-03-20T15:34:28.958Z",
+    "id": "ugJpz97jW"
   },
   {
     "_id": "73qkSHU8y",
@@ -3574,6 +3745,63 @@
     ],
     "createdAt": "2023-09-29T01:17:55.666Z",
     "id": "j3q8FkBxS"
+  },
+  {
+    "_id": "zVaxqBw3G",
+    "name": "localStorage v1 copy",
+    "files": [
+      {
+        "name": "root",
+        "content": "",
+        "children": [
+          "67ee9c9ba20899601d27ae1e",
+          "67ee9c9ba20899601d27ae1f",
+          "67ee9c9ba20899601d27ae20"
+        ],
+        "fileType": "folder",
+        "isSelectedFile": false,
+        "_id": "67ee9c9ba20899601d27ae1d",
+        "createdAt": "2025-04-03T14:35:12.947Z",
+        "updatedAt": "2025-04-03T14:35:12.947Z",
+        "id": "67ee9c9ba20899601d27ae1d"
+      },
+      {
+        "name": "sketch.js",
+        "content": "// https://editor.p5js.org/jht9629-nyu/sketches/qz9-Y-Sc4\n// localStorage v1\n\nlet my = {};\n\nfunction setup() {\n  my.version = '?v=1';\n\n  my.canvas = createCanvas(windowWidth, windowHeight);\n\n  my.urlParams = get_url_params();\n\n  console.log('my.urlParams', my.urlParams);\n\n  let str = localStorage.getItem('urlParams');\n  if (str) {\n    my.urlParamsFromStorage = JSON.parse(str);\n    console.log('my.urlParamsFromStorage', my.urlParamsFromStorage);\n  }\n\n  if (my.urlParams) {\n    save_params();\n  }\n}\n\nfunction draw() {\n  background(200);\n  let x = 10;\n  let y = height / 2;\n  let str = 'no params';\n  let str2 = 'no params from storage';\n  if (my.urlParams) {\n    str = 'url: ' + JSON.stringify(my.urlParams, null, 2);\n  }\n  if (my.urlParamsFromStorage) {\n    str2 = 'storage: ' + JSON.stringify(my.urlParamsFromStorage, null, 2);\n  }\n  text(str, x, y);\n  text(str2, x, y + height * 0.1);\n}\n\nfunction save_params() {\n  if (!my.urlParams) {\n    console.log('no my.urlParams');\n    return;\n  }\n  let str = JSON.stringify(my.urlParams, null, 2);\n  localStorage.setItem('urlParams', str);\n}\n\n// localStorage.clear();\n\n// https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage\n// https://developer.mozilla.org/en-US/docs/Web/API/Storage\n\n// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify\n\n//\nfunction get_url_params() {\n  let query = window.location.search;\n  // console.log('query |' + query + '|');\n  console.log('query.length', query.length);\n  if (query.length < 1) return null;\n  let params = params_query(query);\n  return params;\n  // let store = params['store'];\n  // console.log('nstore', store);\n  // return store;\n}\n\n// https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams\nfunction params_query(query) {\n  // eg. query='abc=foo&def=%5Basf%5D&xyz=5'\n  // params={abc: \"foo\", def: \"[asf]\", xyz: \"5\"}\n  const urlParams = new URLSearchParams(query);\n  const params = Object.fromEntries(urlParams);\n  return params;\n}\n\n// localStorage.clear()\n\n// https://www.buildingh.org\n\n// https://editor.p5js.org/jht9629-nyu/sketches/MbS5C3j-F\n// Necessary-forgery-DrawPoints\n\n// convert to my.\n// startTimedDraw as slider changes\n// added a_drawings\n// generalize draw_to\n// remove class Point, use object literal for point\n// added funtion lineFrom\n\n// project files created with p5.vscode \"Create p5.js Project\"\n// https://editor.p5js.org/jht9629-nyu/sketches/-t2O5JfBr\n// DrawPoints\n// !!@ p5.js/0.10.2\n\n// TRY: use storeItem / getItem to save drawing locally\n// https://p5js.org/reference/#/p5/storeItem\n// https://p5js.org/reference/#/p5/getItem\n\n// Code! Programming with p5.js\n// The Coding Train / Daniel Shiffman\n// https://thecodingtrain.com/beginners/p5js/7.3-array-of-objects.html\n// https://youtu.be/fBqaA7zRO58\n// https://editor.p5js.org/codingtrain/sketches/1y_xfueO\n\n// https://editor.p5js.org/jht9629-nyu/sketches/TQyVoswjQ\n// p5moLibrary DrawPoints\n// https://molab-itp.github.io/p5moLibrary/src/demo/DrawPoints/?v=65\n// https://github.com/molab-itp/p5moLibrary\n\n// https://editor.p5js.org/jht9629-nyu/sketches/5fTCCJ_Sh\n// get_url_params demo\n\n// https://editor.p5js.org/jht9629-nyu/sketches/I9vT_uniR\n// get_url_params v2\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": true,
+        "_id": "67ee9c9ba20899601d27ae1f",
+        "createdAt": "2025-04-03T14:35:12.947Z",
+        "updatedAt": "2025-04-03T14:35:12.947Z",
+        "id": "67ee9c9ba20899601d27ae1f"
+      },
+      {
+        "name": "index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>localStorage</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js\"></script>\n    <!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/addons/p5.sound.min.js\"></script> -->\n  </head>\n\n  <body>\n    <script src=\"sketch.js\"></script>\n  </body>\n</html>\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67ee9c9ba20899601d27ae1e",
+        "createdAt": "2025-04-03T14:35:12.947Z",
+        "updatedAt": "2025-04-03T14:35:12.947Z",
+        "id": "67ee9c9ba20899601d27ae1e"
+      },
+      {
+        "name": "style.css",
+        "content": "html, body {\n  margin: 0;\n  padding: 0;\n}\ncanvas {\n  display: block;\n}\n",
+        "children": [],
+        "fileType": "file",
+        "isSelectedFile": false,
+        "_id": "67ee9c9ba20899601d27ae20",
+        "createdAt": "2025-04-03T14:35:12.947Z",
+        "updatedAt": "2025-04-03T14:35:12.947Z",
+        "id": "67ee9c9ba20899601d27ae20"
+      }
+    ],
+    "createdAt": "2025-04-03T14:35:07.235Z",
+    "updatedAt": "2025-04-03T14:35:12.947Z",
+    "id": "zVaxqBw3G"
   },
   {
     "_id": "FKy0zfnMK",
